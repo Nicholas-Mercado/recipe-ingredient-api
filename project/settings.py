@@ -60,7 +60,7 @@ INSTALLED_APPS = [
     "corsheaders",
     # local
     "accounts",
-    "things",
+    "recipes",
 ]
 
 MIDDLEWARE = [
