@@ -3,11 +3,12 @@ from django.db import models
 
 
 class Recipe(models.Model):
-    name = models.CharField(max_length=256)
-    owner = models.ForeignKey(
-        get_user_model(), on_delete=models.CASCADE, null=True, blank=True
-    )
-    description = models.TextField(default="", null=True, blank=True)
+    owner = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, null=True, blank=True)
+    recipe_name = models.CharField(max_length=256)
+    recipe_url = models.URLField(max_length = 200, null=True, blank=True)
+    notes = models.TextField(default="", null=True, blank=True)
 
     def __str__(self):
-        return self.name
+        return self.recipe
+
+
